@@ -77,7 +77,9 @@ export function Header() {
 
   return (
     <header className="flex flex-row md:flex-col bg-blue-500 md:text-center py-4 justify-between items-center px-5">
-      <h1 className="font-bold">Online Shop</h1>
+      <Link href="/">
+        <h1 className="font-bold">Online Shop</h1>
+      </Link>
       <nav className="hidden md:flex gap-5 justify-center pb-2">
         <Link href="/" className="hover:underline">
           Home

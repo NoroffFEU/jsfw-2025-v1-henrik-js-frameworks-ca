@@ -21,7 +21,7 @@ export default function SearchBar({ products }: SearchBarProps) {
         onChange={(event) => setSearchTerm(event.target.value)}
       />
       {searchTerm.trim() !== "" && (
-        <div className="absolute left-0 right-0 top-35 mt-2 bg-white border rounded shadow z-20 w-full max-h-120 overflow-y-auto">
+        <div className="absolute left-0 right-0 top-35 mt-2 bg-white border rounded shadow z-20 w-full max-h-120 overflow-y-auto  md:max-w-1/2 mx-auto">
           <p className="text-black italic opacity-50">
             Showing{" "}
             <span className="font-bold underline">

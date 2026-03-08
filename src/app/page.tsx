@@ -24,7 +24,7 @@ export default async function Home() {
   return (
     <main className="flex flex-col justify-center items-center py-2">
       <SearchBar products={products} />
-      <div className="py-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 justify-center">
+      <div className="py-4 grid xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 justify-center">
         {products.map((product: Product) => (
           <Link
             key={product.id}

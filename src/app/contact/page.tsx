@@ -1,8 +1,12 @@
 "use client";
 
+import { useState } from "react";
 import type { ContactData } from "../types/contactData";
 
 export default function ContactPage() {
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
+
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
@@ -15,44 +19,44 @@ export default function ContactPage() {
       message: formData.get("message") as string,
     };
 
-    if (
-      !contactDetails.fullName ||
-      !contactDetails.email ||
-      !contactDetails.message
-    ) {
-      alert("Please fill in all required fields.");
-      return;
-    }
-
     if (!contactDetails.fullName || contactDetails.fullName.trim().length < 3) {
-      alert("Please enter a valid full name.");
+      setError("Please enter a valid full name.");
       return;
     }
 
     if (!contactDetails.subject || contactDetails.subject.trim().length < 3) {
-      alert("Please enter a valid subject.");
+      setError("Please enter a valid subject.");
       return;
     }
 
     if (!contactDetails.email || !/^\S+@\S+\.\S+$/.test(contactDetails.email)) {
-      alert("Please enter a valid email address.");
+      setError("Please enter a valid email address.");
       return;
     }
 
     if (!contactDetails.message || contactDetails.message.trim().length < 10) {
-      alert("Please enter a message with at least 10 characters.");
+      setError("Please enter a message with at least 10 characters.");
       return;
     }
 
     console.log("Contact Details:", contactDetails);
-    alert(`Thank you for your message, ${contactDetails.fullName}!`);
+    setSuccess(`Thank you for your message, ${contactDetails.fullName}!`);
+
+    setTimeout(() => {
+      setSuccess("");
+    }, 5000);
+
     event.currentTarget.reset();
+    setError("");
   };
 
   return (
     <main className="bg-gray-300 p-6 text-black min-h-screen">
-      <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-        <h1>Contact Us</h1>
+      <form
+        onSubmit={handleSubmit}
+        className="flex flex-col gap-4 md:max-w-1/2 mx-auto"
+      >
+        <h1 className="font-bold">Contact Us</h1>
         <div className="flex flex-col">
           <label htmlFor="fullName">Full Name:</label>
           <input
@@ -89,8 +93,17 @@ export default function ContactPage() {
             className="border-2 border-blue-500"
           />
         </div>
-        <button type="submit">Send Message</button>
+        <button
+          type="submit"
+          className="bg-blue-500 text-white px-4 py-2 rounded"
+        >
+          Send Message
+        </button>
       </form>
+      {error && <p className="text-red-500 mt-4 text-center">{error}</p>}
+      {success && (
+        <p className="text-green-700 mt-4 text-center font-bold">{success}</p>
+      )}
     </main>
   );
 }

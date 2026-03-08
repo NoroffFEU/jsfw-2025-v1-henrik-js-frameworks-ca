@@ -18,13 +18,13 @@ export default async function ProductPage({
 
   return (
     <main className="mx-auto min-h-screen">
-      <div className="p-4 md:max-w-full flex flex-col mx-auto gap-2 md:gap-6">
+      <div className="p-4 md:max-w-full flex flex-col gap-2 md:gap-6 md:items-center">
         <div className="flex flex-col md:flex-row gap-5 md:gap-10">
           <div className="mt-4 gap-4 md:gap-10">
             <img
               src={product.image.url}
               alt={product.image.alt}
-              className="h-100 object-cover"
+              className="h-100 object-cover w-full"
             />
           </div>
           <div className="mt-4">
@@ -64,13 +64,16 @@ export default async function ProductPage({
             <AddToCartButton product={product} />
           </div>
         </div>
-        <div className="max-w-1/3">
+        <div>
           {product.reviews && product.reviews.length > 0 && (
             <div>
               <h3>Customer reviews:</h3>
               <ul>
                 {product.reviews.map((reviews) => (
-                  <li key={reviews.id} className="bg-blue-500 rounded-xl p-4">
+                  <li
+                    key={reviews.id}
+                    className="bg-blue-500 rounded-xl p-4 mb-2"
+                  >
                     <p className="font-bold">{reviews.username}</p>
                     <p>{reviews.description}</p>
                   </li>
