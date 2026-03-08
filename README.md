@@ -1,36 +1,100 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# FED2 JavaScript FrameWorks Course Assignment
 
-## Getting Started
+![Project Teaser (Image will be added)]()
 
-First, run the development server:
+Deployed Live Website:
+https://fed2-jsframeworks-ca.netlify.app/
+
+## Content
+
+- [Description](#description)
+- [Tech Stack](#tech-stack)
+- [AI Log](#ai-log)
+- [api](#api)
+- [Installing](#installing)
+- [Running](#running)
+- [Contact](#contact)
+
+## Description
+
+- View all products of the online-shop as a guest
+- View individual product listings of online-shop as a guest
+- Search for products
+- Add products to your shopping cart
+- Adjust quantity of products in your shopping cart
+- Remove products from your shopping cart
+- Checkout flow:
+  - Add to cart => View in Cart => Edit quantity => View cart total details => Checkout => Success Confirmation Page
+- Contact Form with TS-based validation
+- Responsive Design
+- Cart states managed with Zustand
+- Cart presistence using localStorage
+
+## Tech Stack
+
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+- Zustand
+- Live Hosting (Netlify)
+
+## AI Log
+
+Tool Used: ChatGPT
+Date: 4. Match 2026
+Purpose: Help with debugging TS errors and understanding Zustand State Management for the shopping cart implementation.
+
+Tool Used: ChatGPT
+Date: 5. Match 2026
+Purpose: Help with debugging TS errors and understanding Zustand State Management for the shopping cart implementation.
+
+Tool Used: ChatGPT
+Date: 6. Match 2026
+Purpose: Help / Explenations on how to structure components with best practice.
+
+AI Tools were strictly used for explenations, debugging guidance and the understanding. No code was copied, and the outcome of AI's help was knowledge so I could understand and implement my own solution to the project myself.
+
+## API
+
+Project uses the Noroff Online Shop API:
+
+```bash
+https://v2.api.noroff.dev/online-shop
+```
+
+## Installing
+
+1. Clone the Repo:
+
+```bash
+git clone https://github.com/NoroffFEU/jsfw-2025-v1-henrik-js-frameworks-ca.git
+```
+
+2. Navigate to the project folder:
+
+```bash
+cd jsfw-2025-v1-henrik-js-frameworks-ca
+```
+
+3. Install the dependencies
+
+```bash
+npm install
+```
+
+## Running
+
+To run the app, run the following commands:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+```bash
+http://localhost:3000
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Contact
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+[My LinkedIn page](https://www.linkedin.com/in/henrik-leutscher/)
